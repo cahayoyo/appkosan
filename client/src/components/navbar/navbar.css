@@ -1,0 +1,45 @@
+.navbar {
+    height: 50px;
+    background-color: #013074;
+    display: flex;
+    justify-content: center;
+}
+
+.navContainer {
+    width: 100%;
+    max-width: 1024px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: 500;
+}
+
+.navButton {
+    margin-left: 20px;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #013074;
+}
+
+.navItems {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logoutButton {
+    padding: 5px 10px;
+    margin-left: 20px;
+}
+
+.cellImg {
+    height: 30px;
+    margin: 10px;
+    width: 35px;
+    border-radius: 15px;
+}
