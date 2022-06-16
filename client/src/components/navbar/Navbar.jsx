@@ -27,7 +27,14 @@ const Navbar = () => {
 
                 {user ? (
                     <div className="navItems">
-                        <img className="cellImg" src={user.img} alt="avatar" />
+                        <img
+                            className="cellImg"
+                            src={
+                                user.img ||
+                                'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'
+                            }
+                            alt="avatar"
+                        />
                         <div>{user.username}</div>
                         <div>
                             <button onClick={logout} className="logoutButton">

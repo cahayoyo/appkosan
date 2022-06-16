@@ -108,7 +108,8 @@ const Kost = () => {
                             <span>{data.address}</span>
                         </div>
                         <span className="hotelDistance">
-                            Excellent location - {data.distance}m from Gunadarma
+                            Excellent location - {data.distance}m from{' '}
+                            {data.university}
                         </span>
                         <span className="hotelPriceHighlight">
                             Book a stay over ${data.cheapestPrice} at this

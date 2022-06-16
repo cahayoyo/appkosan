@@ -1,5 +1,6 @@
 import express from 'express';
 import {
+    countAllBookings,
     createBooking,
     deleteBooking,
     getAllBookings,
@@ -16,5 +17,6 @@ router.delete('/:id', deleteBooking);
 
 // GET
 router.get('/', getAllBookings);
+router.get('/count/bookings', countAllBookings);
 
 export default router;

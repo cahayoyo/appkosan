@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import Header from "../../components/header/Header";
-import Navbar from "../../components/navbar/Navbar";
-import { useLocation } from "react-router-dom";
-import "./list.css";
-import { format } from "date-fns";
-import { DateRange } from "react-date-range";
-import SearchItem from "../../components/searchitem/SearchItem";
-import useFetch from "../../hooks/useFetch";
+import React, { useState } from 'react';
+import Header from '../../components/header/Header';
+import Navbar from '../../components/navbar/Navbar';
+import { useLocation } from 'react-router-dom';
+import './list.css';
+import { format } from 'date-fns';
+import { DateRange } from 'react-date-range';
+import SearchItem from '../../components/searchitem/SearchItem';
+import useFetch from '../../hooks/useFetch';
 
 const List = () => {
     const location = useLocation();
@@ -18,7 +18,7 @@ const List = () => {
     const [max, setMax] = useState(undefined);
 
     const { data, loading, error, reFetch } = useFetch(
-        `/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`
+        `/hotels?city=${destination}&min=${min || 0}&max=${max || 10000000}`
     );
 
     const handleClick = () => {
@@ -43,10 +43,10 @@ const List = () => {
                                 onClick={() => setOpenDate(!openDate)}
                             >{`${format(
                                 dates[0].startDate,
-                                "MM/dd/yyy"
+                                'MM/dd/yyy'
                             )} to ${format(
                                 dates[0].endDate,
-                                "MM/dd/yyyy"
+                                'MM/dd/yyyy'
                             )}`}</span>
                             {openDate && (
                                 <DateRange
@@ -118,7 +118,7 @@ const List = () => {
                     </div>
                     <div className="listResult">
                         {loading ? (
-                            "loading"
+                            'loading'
                         ) : (
                             <>
                                 {data.map((item) => (

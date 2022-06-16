@@ -6,6 +6,7 @@ import useFetch from '../../hooks/useFetch.js';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 const Datatable = ({ columns }) => {
     const location = useLocation();
@@ -21,7 +22,9 @@ const Datatable = ({ columns }) => {
         try {
             await axios.delete(`/${path}/${id}`);
             setList(list.filter((item) => item._id !== id));
-        } catch (err) {}
+        } catch (err) {
+            console.log(err);
+        }
     };
 
     const actionColumn = [

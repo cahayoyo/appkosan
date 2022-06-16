@@ -1,5 +1,5 @@
 export const userColumns = [
-    { field: 'id', headerName: 'ID', width: 70 },
+    { field: '_id', headerName: 'ID', width: 230 },
     {
         field: 'user',
         headerName: 'User',
@@ -38,7 +38,7 @@ export const userColumns = [
     {
         field: 'phone',
         headerName: 'Phone',
-        width: 100,
+        width: 150,
     },
 ];
 
@@ -57,7 +57,7 @@ export const hotelColumns = [
     {
         field: 'title',
         headerName: 'Title',
-        width: 100,
+        width: 190,
     },
     {
         field: 'city',
@@ -67,16 +67,16 @@ export const hotelColumns = [
 ];
 
 export const roomColumns = [
-    { field: '_id', headerName: 'ID', width: 70 },
+    { field: '_id', headerName: 'ID', width: 230 },
     {
         field: 'title',
         headerName: 'Title',
-        width: 100,
+        width: 190,
     },
     {
         field: 'desc',
         headerName: 'Description',
-        width: 100,
+        width: 270,
     },
     {
         field: 'price',
@@ -91,30 +91,20 @@ export const roomColumns = [
 ];
 
 export const bookingColumns = [
-    { field: '_id', headerName: 'ID', width: 70 },
+    { field: '_id', headerName: 'Booking ID', width: 230 },
     {
         field: 'username',
         headerName: 'Username',
-        width: 100,
+        width: 150,
     },
     {
         field: 'hotelName',
         headerName: 'Hotel Name',
-        width: 100,
+        width: 250,
     },
     {
         field: 'hotelCity',
         headerName: 'Hotel City',
-        width: 100,
-    },
-    {
-        field: 'roomTitle',
-        headerName: 'Room Title',
-        width: 100,
-    },
-    {
-        field: 'roomNumber',
-        headerName: 'Room Number',
         width: 100,
     },
     {
@@ -125,6 +115,11 @@ export const bookingColumns = [
     {
         field: 'dateBooking',
         headerName: 'Date Booking',
-        width: 100,
+        width: 200,
+    },
+    {
+        field: 'createdAt',
+        headerName: 'Created At',
+        width: 250,
     },
 ];

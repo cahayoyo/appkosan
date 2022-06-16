@@ -83,6 +83,12 @@ export const hotelInputs = [
         placeholder: 'Hotel',
     },
     {
+        id: 'university',
+        label: 'University',
+        type: 'text',
+        placeholder: 'Gunadarma',
+    },
+    {
         id: 'city',
         label: 'City',
         type: 'text',

@@ -1,6 +1,6 @@
-import Room from "../models/Room.js";
-import Hotel from "../models/Hotel.js";
-import { createError } from "../utils/error.js";
+import Room from '../models/Room.js';
+import Hotel from '../models/Hotel.js';
+import { createError } from '../utils/error.js';
 
 export const createRoom = async (req, res, next) => {
     const hotelId = req.params.hotelid;
@@ -39,14 +39,14 @@ export const updateRoom = async (req, res, next) => {
 export const updateRoomAvailability = async (req, res, next) => {
     try {
         await Room.updateOne(
-            { "roomNumbers._id": req.params.id },
+            { 'roomNumbers._id': req.params.id },
             {
                 $push: {
-                    "roomNumbers.$.unavailableDates": req.body.dates,
+                    'roomNumbers.$.unavailableDates': req.body.dates,
                 },
             }
         );
-        res.status(200).json("Room status has been updated");
+        res.status(200).json('Room status has been updated');
     } catch (err) {
         next(err);
     }
@@ -63,7 +63,7 @@ export const deleteRoom = async (req, res, next) => {
         } catch (err) {
             next(err);
         }
-        res.status(200).json("Room Deleted");
+        res.status(200).json('Room Deleted');
     } catch (err) {
         next(err);
     }
@@ -82,6 +82,15 @@ export const getAllRooms = async (req, res, next) => {
     try {
         const rooms = await Room.find();
         res.status(200).json(rooms);
+    } catch (err) {
+        next(err);
+    }
+};
+
+export const countAllRooms = async (req, res, next) => {
+    try {
+        const roomsCount = await Room.countDocuments({ __v: 0 });
+        res.status(200).json({ count: roomsCount });
     } catch (err) {
         next(err);
     }

@@ -5,7 +5,7 @@ import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalance
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import MonetizationOnOutlinedIcon from '@mui/icons-material/MonetizationOnOutlined';
 
-const Widget = ({ type }) => {
+const Widget = ({ type, uri, uri2 }) => {
     let data;
 
     //temporary
@@ -31,7 +31,7 @@ const Widget = ({ type }) => {
             break;
         case 'order':
             data = {
-                title: 'ORDERS',
+                title: 'HOTELS',
                 isMoney: false,
                 link: 'View all orders',
                 icon: (
@@ -47,7 +47,7 @@ const Widget = ({ type }) => {
             break;
         case 'earning':
             data = {
-                title: 'EARNINGS',
+                title: 'ROOMS',
                 isMoney: true,
                 link: 'View net earnings',
                 icon: (
@@ -63,7 +63,7 @@ const Widget = ({ type }) => {
             break;
         case 'balance':
             data = {
-                title: 'BALANCE',
+                title: 'BOOKINGS',
                 isMoney: true,
                 link: 'See details',
                 icon: (

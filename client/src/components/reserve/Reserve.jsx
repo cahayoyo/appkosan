@@ -59,7 +59,7 @@ const Reserve = ({ setOpen, hotelId, hotelName, hotelCity, hotelPrice }) => {
         username: user.username,
         hotelName: hotelName,
         hotelCity: hotelCity,
-        roomTitle: 'roomTitle',
+        roomTitle: 'title',
         roomNumber: selectedRooms,
         hotelPrice: hotelPrice,
         dateBooking: alldates,
