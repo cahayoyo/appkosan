@@ -25,7 +25,7 @@ const Kost = () => {
     const [open, setOpen] = useState(false);
     const [openModal, setOpenModal] = useState(false);
 
-    const { data, loading, error } = useFetch(`/hotels/find/${id}`);
+    const { data, loading, error } = useFetch(`/kosts/find/${id}`);
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
     const { dates, options } = useContext(SearchContext);
@@ -99,7 +99,7 @@ const Kost = () => {
                         </div>
                     )}
                     <div className="hotelWrapper">
-                        <button className="bookNow">
+                        <button onClick={handleClick} className="bookNow">
                             Reserve or Book Now!
                         </button>
                         <h1 className="hotelTitle">{data.name}</h1>

@@ -3,7 +3,7 @@ import useFetch from '../../hooks/useFetch';
 import './propertylist.css';
 
 const PropertyList = () => {
-    const { data, loading, error } = useFetch('/hotels/countByUniversity');
+    const { data, loading } = useFetch('/kosts/countByUniversity');
 
     const images = [
         'https://img.okezone.com/content/2020/05/06/65/2209839/ventilator-karya-universitas-gunadarma-dirancang-untuk-siap-diproduksi-secara-massal-KvK9qtj8SZ.jpg',

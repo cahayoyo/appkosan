@@ -101,6 +101,12 @@ export const hotelInputs = [
         placeholder: 'kelapa dua',
     },
     {
+        id: 'gender',
+        label: 'Gender',
+        type: 'text',
+        placeholder: 'pria',
+    },
+    {
         id: 'distance',
         label: 'Distance from City Cneter',
         type: 'text',

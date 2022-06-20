@@ -4,7 +4,7 @@ import List from './pages/list/List';
 import Single from './pages/single/Single';
 import New from './pages/new/New';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { productInputs, userInputs } from './formSource';
+import { userInputs } from './formSource';
 import './style/dark.scss';
 import { useContext } from 'react';
 import { DarkModeContext } from './context/darkModeContext';
@@ -15,7 +15,7 @@ import {
     roomColumns,
     userColumns,
 } from './datatablesource';
-import NewHotel from './pages/newHotel/NewHotel';
+import NewKost from './pages/newKost/NewKost';
 import NewRoom from './pages/newRoom/NewRoom';
 
 function App() {
@@ -74,7 +74,7 @@ function App() {
                                 }
                             />
                         </Route>
-                        <Route path="hotels">
+                        <Route path="kosts">
                             <Route
                                 index
                                 element={
@@ -95,7 +95,7 @@ function App() {
                                 path="new"
                                 element={
                                     <ProtectedRoute>
-                                        <NewHotel />
+                                        <NewKost />
                                     </ProtectedRoute>
                                 }
                             />

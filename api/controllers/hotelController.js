@@ -1,58 +1,58 @@
-import Hotel from '../models/Hotel.js';
+import Kost from '../models/Kost.js';
 import Room from '../models/Room.js';
 
-export const createHotel = async (req, res, next) => {
-    const newHotel = new Hotel(req.body);
+export const createKost = async (req, res, next) => {
+    const newKost = new Kost(req.body);
 
     try {
-        const savedHotel = await newHotel.save();
-        res.status(200).json(savedHotel);
+        const savedKost = await newKost.save();
+        res.status(200).json(savedKost);
     } catch (err) {
         next(err);
     }
 };
 
-export const updateHotel = async (req, res, next) => {
+export const updateKost = async (req, res, next) => {
     try {
-        const updatedHotel = await Hotel.findByIdAndUpdate(
+        const updatedKost = await Kost.findByIdAndUpdate(
             req.params.id,
             {
                 $set: req.body,
             },
             { new: true }
         );
-        res.status(200).json(updatedHotel);
+        res.status(200).json(updateKost);
     } catch (err) {
         next(err);
     }
 };
 
-export const deleteHotel = async (req, res, next) => {
+export const deleteKost = async (req, res, next) => {
     try {
-        await Hotel.findByIdAndDelete(req.params.id);
-        res.status(200).json('Hotel Deleted');
+        await Kost.findByIdAndDelete(req.params.id);
+        res.status(200).json('Kost Deleted');
     } catch (err) {
         next(err);
     }
 };
 
-export const getByIdHotel = async (req, res, next) => {
+export const getByIdKost = async (req, res, next) => {
     try {
-        const hotel = await Hotel.findById(req.params.id);
-        res.status(200).json(hotel);
+        const kost = await Kost.findById(req.params.id);
+        res.status(200).json(kost);
     } catch (err) {
         next(err);
     }
 };
 
-export const getAllHotels = async (req, res, next) => {
+export const getAllKosts = async (req, res, next) => {
     const { min, max, ...others } = req.query;
     try {
-        const hotels = await Hotel.find({
+        const kosts = await Kost.find({
             ...others,
             cheapestPrice: { $gt: min || 1, $lt: max || 10000000 },
         }).limit(req.query.limit);
-        res.status(200).json(hotels);
+        res.status(200).json(kosts);
     } catch (err) {
         next(err);
     }
@@ -63,7 +63,7 @@ export const countByCity = async (req, res, next) => {
     try {
         const list = await Promise.all(
             cities.map((city) => {
-                return Hotel.countDocuments({ city: city });
+                return Kost.countDocuments({ city: city });
             })
         );
         res.status(200).json(list);
@@ -96,13 +96,13 @@ export const countByType = async (req, res, next) => {
 
 export const countByUniversity = async (req, res, next) => {
     try {
-        const gunadarmaCount = await Hotel.countDocuments({
+        const gunadarmaCount = await Kost.countDocuments({
             university: 'Gunadarma',
         });
-        const uiCount = await Hotel.countDocuments({ university: 'UI' });
-        const itbCount = await Hotel.countDocuments({ university: 'ITB' });
-        const unpadCount = await Hotel.countDocuments({ university: 'UNPAD' });
-        const ugmCount = await Hotel.countDocuments({ university: 'UGM' });
+        const uiCount = await Kost.countDocuments({ university: 'UI' });
+        const itbCount = await Kost.countDocuments({ university: 'ITB' });
+        const unpadCount = await Kost.countDocuments({ university: 'UNPAD' });
+        const ugmCount = await Kost.countDocuments({ university: 'UGM' });
 
         res.status(200).json([
             { university: 'Universitas Gunadarma', count: gunadarmaCount },
@@ -116,10 +116,10 @@ export const countByUniversity = async (req, res, next) => {
     }
 };
 
-export const countAllHotels = async (req, res, next) => {
+export const countAllKosts = async (req, res, next) => {
     try {
-        const hotelsCount = await Hotel.countDocuments({ __v: 0 });
-        res.status(200).json({ count: hotelsCount });
+        const kostsCount = await Kost.countDocuments({ __v: 0 });
+        res.status(200).json({ count: kostsCount });
     } catch (err) {
         next(err);
     }
@@ -127,9 +127,9 @@ export const countAllHotels = async (req, res, next) => {
 
 export const getHotelRooms = async (req, res, next) => {
     try {
-        const hotel = await Hotel.findById(req.params.id);
+        const kost = await Kost.findById(req.params.id);
         const list = await Promise.all(
-            hotel.rooms.map((room) => {
+            kost.rooms.map((room) => {
                 return Room.findById(room);
             })
         );

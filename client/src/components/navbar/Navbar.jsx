@@ -22,19 +22,21 @@ const Navbar = () => {
                     to="/"
                     style={{ color: 'inherit', textDecoration: 'none' }}
                 >
-                    <span className="logo">MLSI BOOKING</span>
+                    <span className="logo">12BOOKING</span>
                 </Link>
 
                 {user ? (
                     <div className="navItems">
-                        <img
-                            className="cellImg"
-                            src={
-                                user.img ||
-                                'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'
-                            }
-                            alt="avatar"
-                        />
+                        <Link to="/mybooking">
+                            <img
+                                className="cellImg"
+                                src={
+                                    user.img ||
+                                    'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'
+                                }
+                                alt="avatar"
+                            />
+                        </Link>
                         <div>{user.username}</div>
                         <div>
                             <button onClick={logout} className="logoutButton">

@@ -1,4 +1,4 @@
-import './widgetHotels.scss';
+import './widgetKosts.scss';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
@@ -8,8 +8,8 @@ import useFetch from '../../hooks/useFetch.js';
 import HouseOutlinedIcon from '@mui/icons-material/HouseOutlined';
 import { Link } from 'react-router-dom';
 
-const WidgetHotels = () => {
-    const { data, loading, error } = useFetch('hotels/count/hotels');
+const WidgetKosts = () => {
+    const { data, loading, error } = useFetch('kosts/count/kosts');
     console.log(data.count);
 
     return (
@@ -35,4 +35,4 @@ const WidgetHotels = () => {
     );
 };
 
-export default WidgetHotels;
+export default WidgetKosts;

@@ -4,6 +4,7 @@ import {
     createBooking,
     deleteBooking,
     getAllBookings,
+    getByIdUser,
 } from '../controllers/bookingController.js';
 import { verifyAdmin } from '../utils/verifyToken.js';
 
@@ -14,6 +15,9 @@ router.post('/', createBooking);
 
 // DELETE
 router.delete('/:id', deleteBooking);
+
+// FIND
+router.get('/:username', getByIdUser);
 
 // GET
 router.get('/', getAllBookings);

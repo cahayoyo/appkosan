@@ -11,7 +11,7 @@ import { AuthContext } from '../../context/AuthContext';
 const Reserve = ({ setOpen, hotelId, hotelName, hotelCity, hotelPrice }) => {
     const [selectedRooms, setSelectedRooms] = useState([]);
     const [booking, setBooking] = useState({});
-    const { data, loading, error } = useFetch(`/hotels/room/${hotelId}`);
+    const { data, loading, error } = useFetch(`/kosts/room/${hotelId}`);
     const { dates } = useContext(SearchContext);
     const { user } = useContext(AuthContext);
 

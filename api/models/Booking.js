@@ -6,11 +6,11 @@ const BookingSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        hotelName: {
+        kostName: {
             type: String,
             required: true,
         },
-        hotelCity: {
+        kostCity: {
             type: String,
             required: true,
         },
@@ -22,7 +22,7 @@ const BookingSchema = new mongoose.Schema(
             type: [String],
             required: true,
         },
-        hotelPrice: {
+        kostPrice: {
             type: Number,
             required: true,
         },

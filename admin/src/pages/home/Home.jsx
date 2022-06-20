@@ -5,10 +5,10 @@ import Widget from '../../components/widget/Widget';
 import Featured from '../../components/featured/Featured';
 import Chart from '../../components/chart/Chart';
 import Table from '../../components/table/Table';
-import WidgetHotels from '../../components/widgetHotels/WidgetHotels';
 import WidgetBookings from '../../components/widgetBookings/WidgetBookings';
 import WidgetRooms from '../../components/widgetRooms/WidgetRooms';
 import WidgetUsers from '../../components/widgetUsers/WidgetUsers';
+import WidgetKosts from '../../components/widgetKosts/WidgetKosts';
 
 const Home = () => {
     return (
@@ -18,13 +18,9 @@ const Home = () => {
                 <Navbar />
                 <div className="widgets">
                     <WidgetUsers />
-                    {/* <Widget type="user" /> */}
-                    {/* <Widget type="order" /> */}
-                    <WidgetHotels />
+                    <WidgetKosts />
                     <WidgetRooms />
-                    {/* <Widget type="earning" /> */}
                     <WidgetBookings />
-                    {/* <Widget type="balance" /> */}
                 </div>
                 <div className="listContainer">
                     <div className="listTitle">Latest Bookings</div>

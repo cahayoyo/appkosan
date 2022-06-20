@@ -1,14 +1,5 @@
-import {
-    faCalendar,
-    faCalendarDays,
-} from '@fortawesome/free-regular-svg-icons';
-import {
-    faBed,
-    faCar,
-    faPerson,
-    faPlane,
-    faTaxi,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCalendarDays } from '@fortawesome/free-regular-svg-icons';
+import { faBed, faPerson } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { DateRange } from 'react-date-range';
 import { useContext, useState } from 'react';
@@ -16,7 +7,7 @@ import './header.css';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { format } from 'date-fns';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { SearchContext } from '../../context/SearchContext';
 import { AuthContext } from '../../context/AuthContext';
 
@@ -33,7 +24,6 @@ const Header = ({ type }) => {
     const [openOptions, setOpenOptions] = useState(false);
     const [options, setOptions] = useState({
         adult: 1,
-        children: 0,
         room: 1,
     });
 
@@ -57,7 +47,7 @@ const Header = ({ type }) => {
             type: 'NEW_SEARCH',
             payload: { destination, dates, options },
         });
-        navigate('/hotels', { state: { destination, dates, options } });
+        navigate('/kosts', { state: { destination, dates, options } });
     };
 
     return (
@@ -78,20 +68,18 @@ const Header = ({ type }) => {
                 {type !== 'list' && (
                     <>
                         <h1 className="headerTitle">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit.
+                            A lifetime of discounts? It's Genius.
                         </h1>
                         <p className="headerDesc">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Officia earum modi debitis eius praesentium,
-                            recusandae repudiandae assumenda exercitationem
-                            dolorum atque sapiente veritatis fuga minus quisquam
-                            eveniet qui odio, autem doloribus?
+                            Get rewarded for your bookings - unlock instant
+                            savings of 10% or more with a free 12booking account
                         </p>
                         {!user && (
-                            <button className="headerBtn">
-                                Sign in / Register
-                            </button>
+                            <Link to="/login">
+                                <button className="headerBtn">
+                                    Sign in / Register
+                                </button>
+                            </Link>
                         )}
                         <div className="headerSearch">
                             <div className="headerSearchItem">
@@ -145,7 +133,7 @@ const Header = ({ type }) => {
                                     onClick={() => setOpenOptions(!openOptions)}
                                     className="headerSearchText"
                                 >
-                                    {`${options.adult} adult . ${options.children} children . ${options.room} room `}
+                                    {`${options.adult} adult .  ${options.room} room `}
                                 </span>
                                 {openOptions && (
                                     <div className="options">
@@ -176,41 +164,6 @@ const Header = ({ type }) => {
                                                     onClick={() =>
                                                         handleOption(
                                                             'adult',
-                                                            'i'
-                                                        )
-                                                    }
-                                                >
-                                                    +
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div className="optionItem">
-                                            <span className="optionText">
-                                                Children
-                                            </span>
-                                            <div className="optionCounter">
-                                                <button
-                                                    disabled={
-                                                        options.children <= 0
-                                                    }
-                                                    className="optionCounterButton"
-                                                    onClick={() =>
-                                                        handleOption(
-                                                            'children',
-                                                            'd'
-                                                        )
-                                                    }
-                                                >
-                                                    -
-                                                </button>
-                                                <span className="optionCounterNumber">
-                                                    {options.children}
-                                                </span>
-                                                <button
-                                                    className="optionCounterButton"
-                                                    onClick={() =>
-                                                        handleOption(
-                                                            'children',
                                                             'i'
                                                         )
                                                     }

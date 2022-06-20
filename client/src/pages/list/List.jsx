@@ -17,8 +17,8 @@ const List = () => {
     const [min, setMin] = useState(undefined);
     const [max, setMax] = useState(undefined);
 
-    const { data, loading, error, reFetch } = useFetch(
-        `/hotels?city=${destination}&min=${min || 0}&max=${max || 10000000}`
+    const { data, loading, reFetch } = useFetch(
+        `/kosts?city=${destination}&min=${min || 0}&max=${max || 10000000}`
     );
 
     const handleClick = () => {
@@ -90,17 +90,6 @@ const List = () => {
                                         className="listOptionInput"
                                         placeholder={options.adult}
                                         min={1}
-                                    />
-                                </div>
-                                <div className="listOptionItem">
-                                    <span className="listOptionText">
-                                        Children
-                                    </span>
-                                    <input
-                                        type="number"
-                                        className="listOptionInput"
-                                        placeholder={options.children}
-                                        min={0}
                                     />
                                 </div>
                                 <div className="listOptionItem">

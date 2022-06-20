@@ -37,3 +37,12 @@ export const countAllBookings = async (req, res, next) => {
         next(err);
     }
 };
+
+export const getByIdUser = async (req, res, next) => {
+    try {
+        const booking = await Booking.find({ username: req.params.username });
+        res.status(200).json(booking);
+    } catch (err) {
+        next(err);
+    }
+};

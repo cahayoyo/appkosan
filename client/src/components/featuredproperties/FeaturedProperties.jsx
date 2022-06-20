@@ -15,7 +15,7 @@ const formatRupiah = (angka) => {
 };
 
 const FeaturedProperties = () => {
-    const { data, loading, error } = useFetch('/hotels?featured=true&limit=4');
+    const { data, loading } = useFetch('/kosts?featured=true&limit=4');
     return (
         <div className="fp">
             {loading ? (

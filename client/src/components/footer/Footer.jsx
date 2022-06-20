@@ -6,41 +6,19 @@ const Footer = () => {
         <div className="footer">
             <div className="fLists">
                 <ul className="fList">
-                    <li className="fListItem">Countries</li>
-                    <li className="fListItem">Regions</li>
-                    <li className="fListItem">Cities</li>
-                    <li className="fListItem">Districts</li>
-                    <li className="fListItem">Universities</li>
-                    <li className="fListItem">Hotels</li>
-                </ul>
-                <ul className="fList">
                     <li className="fListItem">Anugerah Cahaya Utama</li>
-                    <li className="fListItem">Rachel Sausu</li>
+                    <li className="fListItem">Rachel Kasih Salusu</li>
                     <li className="fListItem">Shafiyatul Chanifah</li>
                 </ul>
                 <ul className="fList">
-                    <li className="fListItem">Countries</li>
-                    <li className="fListItem">Regions</li>
-                    <li className="fListItem">Cities</li>
-                    <li className="fListItem">Districts</li>
-                    <li className="fListItem">Airports</li>
-                    <li className="fListItem">Hotels</li>
+                    <li className="fListItem">10120171</li>
+                    <li className="fListItem">10120901</li>
+                    <li className="fListItem">11120233</li>
                 </ul>
                 <ul className="fList">
-                    <li className="fListItem">Countries</li>
-                    <li className="fListItem">Regions</li>
-                    <li className="fListItem">Cities</li>
-                    <li className="fListItem">Districts</li>
-                    <li className="fListItem">Airports</li>
-                    <li className="fListItem">Hotels</li>
-                </ul>
-                <ul className="fList">
-                    <li className="fListItem">Countries</li>
-                    <li className="fListItem">Regions</li>
-                    <li className="fListItem">Cities</li>
-                    <li className="fListItem">Districts</li>
-                    <li className="fListItem">Airports</li>
-                    <li className="fListItem">Hotels</li>
+                    <li className="fListItem">cahayoyo@gmail.com</li>
+                    <li className="fListItem">salusurachelk@gmail.com</li>
+                    <li className="fListItem">hanifahshafiyatul@gmail.com</li>
                 </ul>
             </div>
             <div className="fText">Copyright 2022 Allah SWT</div>
