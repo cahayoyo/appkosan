@@ -1,6 +1,6 @@
 import './newRoom.scss';
-import Sidebar from '../../components/sidebar/Sidebar';
-import Navbar from '../../components/navbar/Navbar';
+import Sidebar from '../../components/adminSidebar/Sidebar';
+import Navbar from '../../components/adminNavbar/Navbar';
 import { useState } from 'react';
 import { roomInputs } from '../../formSource';
 import useFetch from '../../hooks/useFetch';
@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 const NewRoom = () => {
     const [info, setInfo] = useState({});
-    const [hotelId, setHotelId] = useState(undefined);
+    const [kostId, setKostId] = useState(undefined);
     const [rooms, setRooms] = useState([]);
 
     const { data, loading, error } = useFetch('/kosts');
@@ -24,7 +24,7 @@ const NewRoom = () => {
         e.preventDefault();
         const roomNumbers = rooms.split(',').map((room) => ({ number: room }));
         try {
-            await axios.post(`/rooms/${hotelId}`, { ...info, roomNumbers });
+            await axios.post(`/rooms/${kostId}`, { ...info, roomNumbers });
             navigate('/rooms');
         } catch (err) {
             console.log(err);
@@ -64,17 +64,17 @@ const NewRoom = () => {
                                 <label>Choose a hotel</label>
                                 <select
                                     id="hotelId"
-                                    onChange={(e) => setHotelId(e.target.value)}
+                                    onChange={(e) => setKostId(e.target.value)}
                                 >
                                     {loading
                                         ? 'loading'
                                         : data &&
-                                          data.map((hotel) => (
+                                          data.map((kost) => (
                                               <option
-                                                  key={hotel._id}
-                                                  value={hotel._id}
+                                                  key={kost._id}
+                                                  value={kost._id}
                                               >
-                                                  {hotel.name}
+                                                  {kost.name}
                                               </option>
                                           ))}
                                 </select>

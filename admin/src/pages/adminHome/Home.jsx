@@ -1,10 +1,7 @@
-import Sidebar from '../../components/sidebar/Sidebar';
-import Navbar from '../../components/navbar/Navbar';
+import Sidebar from '../../components/adminSidebar/Sidebar';
+import Navbar from '../../components/adminNavbar/Navbar';
 import './home.scss';
-import Widget from '../../components/widget/Widget';
-import Featured from '../../components/featured/Featured';
-import Chart from '../../components/chart/Chart';
-import Table from '../../components/table/Table';
+import Table from '../../components/adminTable/Table';
 import WidgetBookings from '../../components/widgetBookings/WidgetBookings';
 import WidgetRooms from '../../components/widgetRooms/WidgetRooms';
 import WidgetUsers from '../../components/widgetUsers/WidgetUsers';

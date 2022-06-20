@@ -11,15 +11,15 @@ const MyBookingList = ({ item }) => {
                 className="siImg"
             />
             <div className="siDesc">
-                <h1 className="siTitle">{item.hotelName}</h1>
+                <h1 className="siTitle">{item.kostName}</h1>
                 <span className="siDistance">Booking ID</span>
                 <span className="siTaxiOp">{item._id}</span>
-                <span className="siFeatures">{item.hotelCity}</span>
+                <span className="siFeatures">{item.kostCity}</span>
                 <span className="siCancelOp">Free cancellation</span>
             </div>
             <div className="siDetails">
                 <div className="siDetailTexts">
-                    <span className="siPrice">Rp {item.hotelPrice}</span>
+                    <span className="siPrice">Rp {item.kostPrice}</span>
                     <span className="siTaxOp">Include taxes and fees</span>
                 </div>
             </div>

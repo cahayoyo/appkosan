@@ -1,8 +1,8 @@
-import Home from './pages/home/Home';
-import Login from './pages/login/Login';
-import List from './pages/list/List';
+import Home from './pages/adminHome/Home';
+import Login from './pages/adminLogin/Login';
+import List from './pages/adminList/List';
 import Single from './pages/single/Single';
-import New from './pages/new/New';
+import New from './pages/adminNew/New';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { userInputs } from './formSource';
 import './style/dark.scss';
@@ -15,8 +15,8 @@ import {
     roomColumns,
     userColumns,
 } from './datatablesource';
-import NewKost from './pages/newKost/NewKost';
-import NewRoom from './pages/newRoom/NewRoom';
+import NewKost from './pages/adminNewKost/NewKost';
+import NewRoom from './pages/adminNewRoom/NewRoom';
 
 function App() {
     const { darkMode } = useContext(DarkModeContext);

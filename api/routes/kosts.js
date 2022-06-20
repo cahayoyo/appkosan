@@ -10,7 +10,7 @@ import {
     getByIdKost,
     getHotelRooms,
     updateKost,
-} from '../controllers/hotelController.js';
+} from '../controllers/kostController.js';
 import { verifyAdmin, verifyToken, verifyUser } from '../utils/verifyToken.js';
 import { createError } from '../utils/error.js';
 

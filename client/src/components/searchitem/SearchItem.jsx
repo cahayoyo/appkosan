@@ -11,10 +11,8 @@ const SearchItem = ({ item }) => {
                 <span className="siDistance">
                     {item.distance}m from university
                 </span>
-                <span className="siTaxiOp">Free airport taxi</span>
-                <span className="siSubtitle">
-                    Studio Apartment with Air conditioning
-                </span>
+                <span className="siTaxiOp">{item.gender}</span>
+                <span className="siSubtitle">{item.title}</span>
                 <span className="siFeatures">{item.desc}</span>
                 <span className="siCancelOp">Free cancellation</span>
                 <span className="siCancelOpSubtitle">
@@ -29,7 +27,7 @@ const SearchItem = ({ item }) => {
                     </div>
                 )}
                 <div className="siDetailTexts">
-                    <span className="siPrice">${item.cheapestPrice}</span>
+                    <span className="siPrice">Rp {item.cheapestPrice}</span>
                     <span className="siTaxOp">Include taxes and fees</span>
                     <Link to={`/kosts/${item._id}`}>
                         <button className="siCheckButton">

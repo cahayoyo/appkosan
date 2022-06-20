@@ -135,9 +135,8 @@ const Kost = () => {
                             <div className="hotelDetailsPrice">
                                 <h1>Perfect for a {days}-night stay!</h1>
                                 <span>
-                                    Located in the real heart of krakow, this
-                                    property has an excellent location score og
-                                    9.8!
+                                    Located in the real heart of {data.city},
+                                    this kost has an excellent location!
                                 </span>
                                 <h2>
                                     <b>
@@ -161,10 +160,11 @@ const Kost = () => {
             {openModal && (
                 <Reserve
                     setOpen={setOpenModal}
-                    hotelId={id}
-                    hotelName={data.name}
-                    hotelCity={data.address}
-                    hotelPrice={days * data.cheapestPrice * options.room}
+                    kostId={id}
+                    kostName={data.name}
+                    kostCity={data.address}
+                    kostPrice={days * data.cheapestPrice * options.room}
+                    days={days}
                 />
             )}
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import Home from '../pages/home/Home';
 import Kost from '../pages/kost/Kost';
 import List from '../pages/list/List';

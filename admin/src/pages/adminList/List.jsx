@@ -1,7 +1,7 @@
-import "./list.scss";
-import Sidebar from "../../components/sidebar/Sidebar";
-import Navbar from "../../components/navbar/Navbar";
-import Datatable from "../../components/datatable/Datatable";
+import './list.scss';
+import Sidebar from '../../components/adminSidebar/Sidebar';
+import Navbar from '../../components/adminNavbar/Navbar';
+import Datatable from '../../components/adminDataTable/Datatable';
 
 const List = ({ columns }) => {
     return (

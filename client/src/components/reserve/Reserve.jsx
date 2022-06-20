@@ -8,10 +8,10 @@ import './reserve.css';
 import axios from 'axios';
 import { AuthContext } from '../../context/AuthContext';
 
-const Reserve = ({ setOpen, hotelId, hotelName, hotelCity, hotelPrice }) => {
+const Reserve = ({ setOpen, kostId, kostName, kostCity, kostPrice }) => {
     const [selectedRooms, setSelectedRooms] = useState([]);
     const [booking, setBooking] = useState({});
-    const { data, loading, error } = useFetch(`/kosts/room/${hotelId}`);
+    const { data, loading, error } = useFetch(`/kosts/room/${kostId}`);
     const { dates } = useContext(SearchContext);
     const { user } = useContext(AuthContext);
 
@@ -57,11 +57,11 @@ const Reserve = ({ setOpen, hotelId, hotelName, hotelCity, hotelPrice }) => {
 
     const newBooking = {
         username: user.username,
-        hotelName: hotelName,
-        hotelCity: hotelCity,
+        kostName: kostName,
+        kostCity: kostCity,
         roomTitle: 'title',
         roomNumber: selectedRooms,
-        hotelPrice: hotelPrice,
+        kostPrice: kostPrice,
         dateBooking: alldates,
     };
 
@@ -82,8 +82,6 @@ const Reserve = ({ setOpen, hotelId, hotelName, hotelCity, hotelPrice }) => {
             navigate('/');
         } catch (err) {}
     };
-
-    // console.log(newBooking);
 
     return (
         <div className="reserve">
