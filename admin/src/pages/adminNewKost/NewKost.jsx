@@ -65,7 +65,7 @@ const NewKost = ({}) => {
             <div className="newContainer">
                 <Navbar />
                 <div className="top">
-                    <h1>Add New Hotel</h1>
+                    <h1>Add New Kost</h1>
                 </div>
                 <div className="bottom">
                     <div className="left">
