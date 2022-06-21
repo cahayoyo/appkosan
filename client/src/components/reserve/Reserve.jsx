@@ -100,7 +100,9 @@ const Reserve = ({ setOpen, kostId, kostName, kostCity, kostPrice }) => {
                             <div className="rMax">
                                 Max people: <b>{item.maxPeople}</b>
                             </div>
-                            <div className="rPrice">{item.price}</div>
+                            <div className="rPrice">
+                                Rp {item.price} / Night
+                            </div>
                         </div>
                         <div className="rSelectRooms">
                             {item.roomNumbers.map((roomNumber) => (
